@@ -1,0 +1,31 @@
+{
+  "name": "vue-multiple-sortable",
+  "version": "1.0.0",
+  "description": "You can sorting to with multiple selected elements in your Vue.js application.",
+  "main": "index.js",
+  "cdn": "dist/multiple-sortable.min.js",
+  "author": "Shimpei Tsuji",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "vue": "^2.5.13"
+  },
+ "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "vue-loader": "^12.1.0",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^3.6.0",
+    "webpack-merge": "^4.1.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  }
+}
