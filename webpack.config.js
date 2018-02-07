@@ -62,7 +62,17 @@ if (process.env.NODE_ENV === 'production') {
       libraryTarget: 'window',
       library: 'MultipleSortable'
     }
-  })
+  }),
+  merge(productionConfig,
+  {
+    entry: path.resolve(__dirname + '/src/index.js'),
+    output: {
+      filename: 'multiple-sortable.js',
+      libraryTarget: 'umd',
+      library: 'MultipleSortable',
+      umdNamedDefine: true
+    }
+  }),
  ];
 } else {
   console.error(`\`${process.env.NODE_ENV}\` is not defined.`);
