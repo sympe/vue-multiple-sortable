@@ -10,6 +10,10 @@
   "dependencies": {
     "vue": "^2.5.13"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sympe/vue-multiple-sortable"
+  },
  "devDependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
