@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const baseConfig = {
+var config = {
   output: {
     path: path.resolve(`${__dirname}/dist/`)
   },
@@ -17,45 +17,23 @@ const baseConfig = {
       }
     ]
   },
-  resolve: {
-    extensions: ['.vue', '.js'],
-    alias: {
-      '@src': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src', 'components'),
-      'vue$': 'vue/dist/vue.esm.js'
-    }
-  },
   externals: {
     'vue': 'Vue'
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      'Vue': 'vue'
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      sourceMap: false,
+      mangle: true,
+      compress: {
+        warnings: false
+      }
     })
   ]
 };
 
-let config;
-if (process.env.NODE_ENV === 'production') {
-  const productionConfig = merge(baseConfig, {
-    plugins: [
-      new CleanWebpackPlugin(['dist']),
-      new webpack.optimize.UglifyJsPlugin({
-        minimize: true,
-        sourceMap: true,
-        mangle: true,
-        compress: {
-          warnings: false
-        }
-      }),
-      new webpack.LoaderOptionsPlugin({
-        minimize: true
-      })
-    ],
-    devtool: '#source-map'
-  });
-  config = [
-  merge(productionConfig, {
+module.exports = [
+  merge(config, {
     entry: path.resolve(__dirname + '/src/plugins.js'),
     output: {
       filename: 'multiple-sortable.min.js',
@@ -63,19 +41,14 @@ if (process.env.NODE_ENV === 'production') {
       library: 'MultipleSortable'
     }
   }),
-  merge(productionConfig,
+  merge(config,
   {
     entry: path.resolve(__dirname + '/src/MultipleSortable.vue'),
     output: {
       filename: 'multiple-sortable.js',
       libraryTarget: 'umd',
-      library: 'vue-multiple-sortable',
+      library: 'multiple-sortable',
       umdNamedDefine: true
     }
-  }),
- ];
-} else {
-  console.error(`\`${process.env.NODE_ENV}\` is not defined.`);
-}
-
-module.exports = config;
+  })
+];
