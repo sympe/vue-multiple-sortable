@@ -1,5 +1,5 @@
-import MultipleSortable from '@components/MultipleSortable';
+import MMultipleSortable from '@components/MultipleSortable';
 
-export const VERSION = '1.0.0';
+export const VERSION = '1.0.1';
 
-export const MultipleSortable = MultipleSortable;
+export const MultipleSortable = MMultipleSortable;
