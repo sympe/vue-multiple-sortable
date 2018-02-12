@@ -65,11 +65,11 @@ if (process.env.NODE_ENV === 'production') {
   }),
   merge(productionConfig,
   {
-    entry: path.resolve(__dirname + '/src/index.js'),
+    entry: path.resolve(__dirname + '/src/MultipleSortable.vue'),
     output: {
       filename: 'multiple-sortable.js',
       libraryTarget: 'umd',
-      library: 'MultipleSortable',
+      library: 'vue-multiple-sortable',
       umdNamedDefine: true
     }
   }),
