@@ -10,7 +10,6 @@
 import _ from 'lodash';
 
 export default {
-  name: 'multi-select-sortable',
   props: ['items'],
   data: function () {
     return {
@@ -43,7 +42,6 @@ export default {
     addSelectedItems: function (item) {
       this.selectedItems[item.index] = item;
       this.items[item.index].isSelected = true;
-      console.log(this.selectedItems);
     },
     deleteSelectedItems: function (item) {
       this.items[item.index].isSelected = false;
