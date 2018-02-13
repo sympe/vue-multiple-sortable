@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="{selected: item.isSelected}" draggable="true" @dragstart="dragstart(item, $event)" @dragend="dragend" @dragenter="dragenter(item, $event)" @click="select(item)" v-for="item in items" :key="item.index">
-      <slot name="item" :title='item.title' :id='item.id' :keyword='item.keyword' :description='item.description'></slot>
+      <slot name="item" :obj='item.obj'></slot>
     </div>
   </div>
 </template>
@@ -15,7 +15,6 @@ export default {
     return {
       selectedItems: {},
       beforeY: 0,
-      slotText: ":names='item.name' :id='item.id'"
     };
   },
   computed: {
