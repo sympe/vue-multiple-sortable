@@ -19,7 +19,7 @@ In a template
 ```javascript
 <multiple-sortable :items="items" @drag="drag">
   <div slot="item" slot-scope="props">
-      {{ ' 【' + props.id + '】' +  props.title }}
+      {{ ' 【' + props.obj.id + '】' +  props.obj.title }}
   </div>
 </multiple-sortable>
 ```
