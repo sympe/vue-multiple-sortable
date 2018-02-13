@@ -1,6 +1,6 @@
 {
   "name": "vue-multiple-sortable",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "You can sorting to with multiple selected elements in your Vue.js application.",
   "main": "dist/multiple-sortable.js",
   "cdn": "dist/multiple-sortable.min.js",

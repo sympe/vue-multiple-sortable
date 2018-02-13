@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sympe/vue-multiple-sortable.svg?branch=master)](https://travis-ci.org/sympe/vue-multiple-sortable)
+
 # vue-multiple-sortable
 You sorting to with multiple selected elements in your Vue.js application.
 
