@@ -47,6 +47,10 @@ export default {
       delete this.selectedItems[item.index];
     },
     dragstart: function (item, event) {
+      var dragElement = event.target.cloneNode(true);
+      dragElement.style.display = "none";
+      event.dataTransfer.setDragImage(dragElement, 0, 0);
+
       if (!(item.index in this.selectedItems)) {
         for (var key in this.selectedItems) {
           this.deleteSelectedItems(this.selectedItems[key]);
