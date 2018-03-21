@@ -5,32 +5,27 @@
 
 You sorting to with multiple selected elements in your Vue.js application.
 
-## Installation
-
-```bash
-npm install vue-multiple-sortable
-```
+![movie](https://user-images.githubusercontent.com/12382464/37713415-3cba7478-2d5a-11e8-9ff0-171629a0bceb.gif)
 
 ## Demo
 
 https://sympe.github.io/vue-multiple-sortable-demo/dist/
 
 ## Usage
+### Install
 
-### Simple component
-In a template
+```bash
+npm install --save vue-multiple-sortable
+```
 
-```javascript
+### A Single File Component Example
+```html
 <multiple-sortable :items="items" @drag="drag">
   <div slot="item" slot-scope="props">
       {{ ' 【' + props.obj.id + '】' +  props.obj.title }}
   </div>
 </multiple-sortable>
-```
 
-In a script
-
-```javascript
 <script>
 import MultipleSortable from 'vue-multiple-sortable'
 
