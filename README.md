@@ -1,6 +1,5 @@
 # vue-multiple-sortable
 
-[![Build Status](https://travis-ci.org/sympe/vue-multiple-sortable.svg?branch=master)](https://travis-ci.org/sympe/vue-multiple-sortable)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.txt)
 
 You sorting to with multiple selected elements in your Vue.js application.
